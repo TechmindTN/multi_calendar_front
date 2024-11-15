@@ -1,0 +1,48 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+
+        <div class="button-container">
+            <button class="status-btn">Still Running</button>
+            <button class="status-btn">Done</button>
+            
+            <div class="circle">
+              <i class="material-icons">save</i> <!-- Use Material Icons or your preferred icon -->
+            </div>
+            <div class="circle">
+              <i class="material-icons">add</i> <!-- Use Material Icons or your preferred icon -->
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card" *ngFor="let card of cards">
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.content }}</p>
+            </div>
+          </div>
+          
+          <!-- Add Button (Icon) -->
+          <button (click)="addCard()">+</button>
+          
+          

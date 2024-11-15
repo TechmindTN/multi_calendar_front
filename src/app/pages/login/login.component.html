@@ -1,0 +1,41 @@
+<app-default-login-layout
+    title="Login into your account"
+    primaryBtnText="Login Now"
+    secondaryBtnText="Signup Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+>
+    <form [formGroup]="loginForm">
+        <!-- <app-primary-input
+        [(ngModel)]="email"
+            formControlName="email"
+            inputName="email"
+            type="text"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input> -->
+        <app-primary-input
+        [(ngModel)]="username"
+            formControlName="username"
+            inputName="username"
+            type="text"
+            label="username"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+        [(ngModel)]="password"
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Your Password"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <span>Forgot password?</span>
+    </form>
+</app-default-login-layout>

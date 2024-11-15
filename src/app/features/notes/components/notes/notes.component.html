@@ -1,0 +1,57 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+
+        <div class="button-container">
+            <button class="status-btn">Still Running</button>
+            <button class="status-btn">Done</button>
+            
+            <div class="circle">
+              <i class="material-icons">save</i> <!-- Use Material Icons or your preferred icon -->
+            </div>
+            <div class="circle">
+              <i class="material-icons">add</i> <!-- Use Material Icons or your preferred icon -->
+            </div>
+     </div>
+     <div class="card-container">
+        <div class="card">
+          <!-- Three-dot icon for edit options -->
+  <mat-icon class="edit-icon" (click)="openEditDialog()">more_horiz</mat-icon>
+  
+  <!-- Card content -->
+  <h3>{{ cards[1].title }}</h3>
+  <p>{{ cards[1].description }}</p>
+        </div>
+        <div class="card">
+          <h3>Card 2</h3>
+          <p>Content for card 2.</p>
+        </div>
+        <div class="card">
+          <h3>Card 3</h3>
+          <p>Content for card 3.</p>
+        </div>
+        <!-- More cards can go here -->
+      </div>
+      

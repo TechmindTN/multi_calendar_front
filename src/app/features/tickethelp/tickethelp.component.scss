@@ -1,0 +1,317 @@
+.project-interface {
+    background-color: #F7F7F7;
+    padding: 20px;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .main-content {
+    // display: flex;
+    gap: 20px;
+  }
+  
+  .search-container {
+    flex: 1;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .additional-content {
+    // flex: 1;
+    
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+  }
+  
+
+
+  /* Main Sidebar Styling */
+.sidebar {
+    height: 100%;
+    width: 0; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #001B48;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+  }
+  
+  /* Open Sidebar */
+  .sidebar.open {
+    width: 250px;
+  }
+  
+  /* Sidebar Links */
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #575757;
+  }
+  
+  /* Close Button (X) */
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 30px;
+  }
+  
+  /* Toggle Button for Sidebar */
+  .openbtn {
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    background-color: #001B48;
+    border: none;
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+  
+  /* Main Content Style */
+  .main-content {
+    margin-left: 260px;
+    padding: 20px;
+    transition: margin-left 0.5s;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+  }//fin sidebarcss
+//css dashboard menu
+  .dashboardwhite{
+    background-color: #ffffff;
+    margin: 20px;
+   }// fin css dashboard menu
+
+
+   .divider {
+    border: none;          /* Removes the default border */
+    height: 1px;          /* Height of the line */
+    background-color: #ccc; /* Color of the line */
+    margin-top: 5px;      /* Space above the line */
+    margin-bottom: 10px;
+    margin-left: 200px;   /* Space below the line */
+    margin-right:200px; 
+  }
+   nav {
+    display: flex;
+    justify-content: space-between; /* Places items on opposite sides */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #001B48;
+    color: white;
+  }
+  .titre {
+    margin: 0;
+    font-size: 1.5em;
+    color: #DEDFE0; /* Light color for contrast */
+  }
+  
+  .iconmenu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .iconmenu a {
+    text-decoration: none;
+    color: #DEDFE0; /* Match link color to the design */
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 10px;
+    
+  }
+  
+  .iconmenu a:hover {
+    color: #76E2F1; /* Lighter color for hover effect */
+    background-color: #02457A;
+    border-radius: 4px;
+    
+  }
+
+
+
+
+
+
+
+
+
+  /* Right Section (75% Width) */
+  .right-section {
+    display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;   
+    
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .dashboard-content {
+      flex-direction: column;
+    }
+    
+    .right-section {
+      width: 100%;
+    }
+  }
+
+  
+  //forum css
+  /* Form Row Styles */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-full-row {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #001B48;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #E8E8E8;
+  }
+  
+  /* Button Row */
+  .button-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .form-button {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .discord-button {
+    background-color: #001B48; /* Discord color */
+  }
+  
+  .save-button {
+    background-color: #001B48; /* Blue background */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-button {
+      width: 100%;
+    }
+  }
+  .CompanyInformation {
+    list-style: none;
+    padding: 0;
+    font-size: 26px;
+    color: #001B48;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+  }
+
+
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .input-label {
+    color: #001B48;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .input-field {
+    background-color: #E8E8E8;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none; /* Prevents resizing */
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .checkbox-label {
+    color: #001B48;
+    font-size: 16px;
+  }
+  
+  .checkbox-label input {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  

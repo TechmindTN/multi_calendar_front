@@ -1,0 +1,77 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+
+
+
+
+
+
+        <div class="right-section">
+            <div *ngIf="activeSection === 'info'">
+              <h3 class="CompanyInformation">FeedBack</h3>
+              <form>
+                  <!-- Name and Field (50/50 Split) -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="field">Company</label>
+                      <input type="text" id="field" class="form-control" />
+                    </div>
+                  </div>
+              
+                  <!-- Email (Full Width) -->
+                  <div class="form-full-row">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="checkbox-group">
+                    
+                    <div class="form-group">
+                        <label for="email">Priority</label>
+                    <label class="checkbox-label">
+                      <input type="radio" name="yesNo" value="yes"> Yes
+                    </label></div>
+                    <label class="checkbox-label">
+                      <input type="radio" name="yesNo" value="no"> No
+                    </label>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="details" class="input-label">Details:</label>
+                    <textarea id="details" class="input-field" rows="4" placeholder="Enter details here..."></textarea>
+                  </div>
+                
+                  <!-- Buttons (Full Width) -->
+            <div class="button-row">
+                <button type="button" class="form-button discord-button">Discord</button>
+                <button type="submit" class="form-button save-button">Save</button>
+              </div>
+                  </form>

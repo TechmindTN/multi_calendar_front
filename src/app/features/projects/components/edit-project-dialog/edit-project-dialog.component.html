@@ -1,0 +1,39 @@
+
+
+ <div class="edit-dialog">
+  <h2 class="edit-title">Edit Project</h2>
+  <form>
+    <div class="input-group">
+      <label for="name" class="input-label">Name:</label>
+      <input id="name" [(ngModel)]="project.name" name="name" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label for="startingDate" class="input-label">Starting Date:</label>
+      <input id="startingDate" type="date" [(ngModel)]="project.stratingDate" name="startingDate" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label for="deadline" class="input-label">Deadline:</label>
+      <input id="deadline" type="date" [(ngModel)]="project.deadline" name="deadline" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label for="duration" class="input-label">Duration (days):</label>
+      <input id="duration" type="number" [(ngModel)]="project.duration" name="duration" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label for="status" class="input-label">Status:</label>
+      <select id="status" [(ngModel)]="project.status" name="status" class="input-field">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button type="button" (click)="onSave()" class="button save-button">Save</button>
+      <button type="button" (click)="onCancel()" class="button cancel-button">Cancel</button>
+    </div>
+  </form>
+</div>

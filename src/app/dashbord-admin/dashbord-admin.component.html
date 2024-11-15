@@ -1,0 +1,59 @@
+<!-- Admin Dashboard Component Template -->
+<!-- <div class="dashboard-container"> -->
+    <!-- Top Statistic Card -->
+  
+  
+   <!-- Cards Row -->
+    <!--<div class="cards-row">
+      <div class="dashboard-card" *ngFor="let card of cards">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </div>
+    </div>-->
+    <!-- <app-sidebar></app-sidebar> -->
+     <!-- Sidebar Container -->
+<!-- Sidebar Container -->
+
+
+<!-- Main Content -->
+
+
+    <div class="dashboardwhite">
+      <nav>
+        <div class="sidebar" [class.open]="sidebarOpen">
+          <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+          <a href="#">Dashboard</a>
+          <a href="#">Tasks</a>
+          <a href="#">Projects</a>
+          <a href="#">Profile</a>
+        </div>
+        
+        <!-- Toggle Button -->
+        <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+        <p class="titre">Dashboard</p>
+        <div class="iconmenu">
+            
+        <a mat-button routerLink="/profil"> profil</a>
+        <a mat-button routerLink="/comment">comment</a>
+        <a mat-button routerLink="/notification">Contact</a>
+    </div>
+      </nav>
+      <div class="first_container">
+    <div class="statistic-card">
+        <h2>Statistics</h2>
+        <p>Overview of activities</p>
+        <!-- Add charts, graphs, or numbers here as needed -->
+      </div>
+    </div>
+    <div class="dashboard-container">
+        
+        <div class="card card-1" routerLink="/tasks"><img src="src\assets\svg\icons8-tâches-50 (1).png">Tasks
+        <p>Last Update</p><hr class="divider"></div>
+        <div class="card card-2" routerLink="/projects"><img src="\login-page\src\assets\svg2oTOTOwz7r4Vz5JbcAtLS0oLG1B.svg">Projects<p>Last Update</p><hr class="divider"></div>
+        <div class="card card-3" routerLink="/profile"(click)="navigateToProfile()"><img src="src\assets\svg\icons8-administrateur-homme-26 (1).png">Profil<p>Last Update</p><hr class="divider"></div>
+        <div class="card card-4" routerLink="/notes"><img src="src\assets\svg\icons8-note-50 (1).png">Notes<p>Last Update</p><hr class="divider"></div>
+    </div>
+</div>    
+    
+  <!-- </div> -->
+  

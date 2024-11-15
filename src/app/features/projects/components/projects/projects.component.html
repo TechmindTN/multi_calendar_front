@@ -1,0 +1,95 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+  <!-- Main content with search and additional div beside it -->
+  <div class="main-content">
+    
+    <div class="search-container">
+
+        
+        <input type="text" placeholder="Search..." class="search-bar">
+        <div class="filter-div">
+            <!-- Filter options content here -->
+            <select>
+                <option value="all">Filtrer</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+      </div>
+    <div class="additional-content">
+      <button class="add-button" 
+      (click)="onAdd()">create a new project</button>
+    </div>
+  </div>
+  <!-- <div class="projects-container">
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.logo" alt="{{project.name}}" class="project-logo">
+      <div class="project-details">
+        <h3>{{project.name}}</h3>
+        <p><strong>Starting Date:</strong> {{project.startingDate}}</p>
+        <p><strong>Deadline:</strong> {{project.deadline}}</p>
+        <p><strong>Duration:</strong> {{project.duration}} days</p>
+        <p><strong>Status:</strong> {{project.status}}</p>
+        <div class="project-actions">
+          <button (click)="editProject(project)">Edit</button>
+          <button (click)="deleteProject(project)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="card-table">
+    
+    <div class="card-content">
+      <div class="table-row">
+        <div class="table-cell1">logo</div>
+        <div class="table-cell1">Name</div>
+        <div class="table-cell1">startingDate</div>
+        <div class="table-cell1">Deadline</div>
+        <div class="table-cell1">Duration</div>
+        <div class="table-cell1">Status</div>
+        <div class="table-cell1">Actions</div>
+      </div>
+      <div class="table-row" *ngFor="let project of project">
+        <div class="table-cell">{{ project.logo }}</div>
+        <div class="table-cell">{{ project.name }}</div>
+        <div class="table-cell">{{ project.stratingDate }}</div>
+        <div class="table-cell">{{ project.deadline }}</div>
+        <div class="table-cell">{{ project.duration }}</div>
+        <div class="table-cell">{{ project.status }}</div>
+        <div class="table-cell">{{ project.status }}</div>
+        <div class="table-cell">
+          <button (click)="editProject(project)">Edit</button>
+          <button (click)="deleteProject(project)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

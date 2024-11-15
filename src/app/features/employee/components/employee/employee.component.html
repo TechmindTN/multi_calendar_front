@@ -1,0 +1,77 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+        <!-- Main content with search and additional div beside it -->
+  <div class="main-content">
+    
+    <div class="search-container">
+
+        
+        <input type="text" placeholder="Search..." class="search-bar">
+        <div class="filter-div">
+            <!-- Filter options content here -->
+            <select>
+                <option value="all">Filtrer</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+      </div>
+     <div class="additional-content">
+        <button class="add-button" 
+        (click)="onAdd()">create a new employee</button>
+        <button class="add-button" 
+        (click)="onAdd()">Import</button>
+        <button class="add-button" 
+        (click)="onAdd()">Export</button>
+    </div>
+  </div>
+
+
+  <div class="card-table">
+    
+    <div class="card-content">
+      <div class="table-row">
+        <div class="table-cell1">Photo</div>
+        <div class="table-cell1">Name</div>
+        <div class="table-cell1">Departement</div>
+        <div class="table-cell1">Role</div>
+        <div class="table-cell1">Status</div>
+        <div class="table-cell1">Actions</div>
+      </div>
+      <div class="table-row" *ngFor="let employee of employees">
+        <div class="table-cell">{{ employee.profile_photo }}</div>
+        <div class="table-cell">{{ employee.first_name }}</div>
+        <div class="table-cell">{{ employee.id_department }}</div>
+        <div class="table-cell">{{ employee.user.role_id }}</div>
+        <div class="table-cell">{{ employee.status }}</div>
+        <div class="table-cell">
+          <button (click)="editEmployee(employee)">Edit</button>
+          <button (click)="deleteEmployee(employee)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,210 @@
+.edit-dialog {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-title {
+    color: #001B48;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .input-label {
+    color: #001B48;
+    font-weight: bold;
+    font-size: 20px; /* Increased font size for better readability */
+  }
+  
+  .input-field {
+    background-color: #E8E8E8;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    font-size: 18px; /* Slightly larger font */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    background-color: #001B48;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #E8E8E8;
+    color: #001B48;
+  }
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .edit-dialog {
+        padding: 30px;
+        max-width: 90%;
+    }
+    
+    .edit-title {
+        font-size: 30px; /* Smaller font size on small screens */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 15px;
+    }
+
+    .button {
+        font-size: 14px; /* Smaller font size on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-title {
+        font-size: 24px;
+    }
+
+    .input-field {
+        font-size: 16px;
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+    
+    .edit-dialog {
+        padding: 20px; /* Less padding for smaller screens */
+    }
+}
+  
+
+
+
+
+
+// the second css for a larger dialog
+// .edit-dialog {
+//     background-color: #FFFFFF;
+//     border-radius: 20px;
+//     padding: 40px; /* Increased padding */
+//     max-width: 800px; /* Further increased max-width */
+//     margin: auto;
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+//   }
+  
+//   .edit-title {
+//     color: blue;
+//     text-align: center;
+//     font-size: 32px; /* Increased font size */
+//     margin-bottom: 30px;
+//   }
+  
+//   .input-group {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 16px;
+//     margin-bottom: 25px;
+//   }
+  
+//   .input-label {
+//     color: #001B48;
+//     font-weight: bold;
+//     font-size: 20px; /* Increased font size for better readability */
+//   }
+  
+//   .input-field {
+//     background-color: #E8E8E8;
+//     padding: 12px;
+//     border: none;
+//     border-radius: 5px;
+//     font-size: 18px; /* Slightly larger font */
+//   }
+  
+//   .button-group {
+//     display: flex;
+//     justify-content: center;
+//     gap: 15px;
+//   }
+  
+//   button {
+//     padding: 12px 24px;
+//     font-size: 16px;
+//     border-radius: 8px;
+//     cursor: pointer;
+//   }
+  
+
+
+
+
+
+
+// .edit-dialog {
+//   background-color: #FFFFFF;
+//   border-radius: 20px;
+//   padding: 50px; /* More padding for spacious layout */
+//   max-width: 900px; /* Wider max-width */
+//   margin: auto;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+// }
+
+// .edit-title {
+//   color: blue;
+//   text-align: center;
+//   font-size: 32px;
+//   margin-bottom: 30px;
+// }
+
+// .input-group {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 16px;
+//   margin-bottom: 25px;
+// }
+
+// .input-label {
+//   color: #001B48;
+//   font-weight: bold;
+//   font-size: 20px;
+// }
+
+// .input-field {
+//   background-color: #E8E8E8;
+//   padding: 14px;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 18px;
+// }
+
+// .button-group {
+//   display: flex;
+//   justify-content: center;
+//   gap: 20px;
+// }
+
+// button {
+//   padding: 14px 28px;
+//   font-size: 18px;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
