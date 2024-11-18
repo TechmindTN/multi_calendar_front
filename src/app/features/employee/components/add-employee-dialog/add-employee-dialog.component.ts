@@ -13,8 +13,8 @@ import {  EventEmitter, Output } from '@angular/core';
 })
 export class AddEmployeeDialogComponent {
   employeeData = {
-    name: '',
-    department: '',
+    first_name: '',
+    id_departement: '',
     role: '',
     status: ''
   };

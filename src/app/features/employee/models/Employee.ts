@@ -2,7 +2,7 @@ import { User } from "../../user/models/user";
 
 interface Employee {
   id: number;
-  id_department:number;
+  id_departement:number;
   id_schedule:number;
   id_user:number;
   profile_photo: string;

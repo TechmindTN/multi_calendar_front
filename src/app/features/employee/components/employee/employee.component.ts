@@ -113,18 +113,63 @@ getEmployees(){
 //   console.log("Add button clicked");
 //   // This could also open a dialog to add a new item if needed
 // }
+
+
+
+
+
+
+
+
+// onAdd() {
+//   const dialogRef = this.dialog.open(AddEmployeeDialogComponent);
+
+//   dialogRef.afterClosed().subscribe((result: Employee) => {
+
+//     if (result) {
+//       console.log('aaaaa')
+//       result.user.role_id=1
+//       console.log('bbbbb'+result);
+//       console.log(result.role)
+//       this.employees.push(result); // Add the new employee to the table
+//     }
+//   });
+// }
+
 onAdd() {
   const dialogRef = this.dialog.open(AddEmployeeDialogComponent);
 
   dialogRef.afterClosed().subscribe((result: Employee) => {
-
     if (result) {
-      console.log('aaaaa')
-      result.user.role_id=1
-      console.log('bbbbb'+result);
-      console.log(result.role)
-      this.employees.push(result); // Add the new employee to the table
+      console.log('Dialog Result:', result);
+
+      // Ensure the `user` object exists before assigning `role_id`
+      if (!result.user) {
+        result.user = {
+        
+          id: 0,
+          id_company: 0,
+          id_departement:0,
+          role_id:0,
+          created: '',
+          email: '',
+          last_login:'',
+          last_updated:'',
+          phone:0,
+          user_name:'',
+        }; // Initialize `user` object if it's undefined
+      }
+
+      result.user.role_id = 1; // Set `role_id`
+      console.log('Updated Result:', result);
+
+      // Add the new employee to the table
+      this.employees.push(result);
+      console.log('Employee added successfully:', result);
+    } else {
+      console.log('Dialog closed without any data.');
     }
   });
 }
+
 }
