@@ -12,6 +12,7 @@ import { ProfileComponent } from './features/profile/components/profile/profile.
 import {NgModule} from '@angular/core';
 import {EmployeeComponent} from './features/employee/components/employee/employee.component'
 import { TickethelpComponent } from './features/tickethelp/tickethelp.component';
+import { ProfileUserComponent } from './features/profile_user/component/profile-user/profile-user.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +39,7 @@ export const routes: Routes = [
         { path: '', redirectTo: '/tasks', pathMatch: 'full' }, // default route
         {path: 'employee', component:EmployeeComponent},
         {path: 'tickethelp', component:TickethelpComponent},
+        {path: 'profile_user', component:ProfileUserComponent},
 
 ];
 @NgModule({

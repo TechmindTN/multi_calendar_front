@@ -24,6 +24,55 @@
     border: 1px solid #ddd;
     border-radius: 4px;
   }
+  /* Container filtre Styling */
+.filter-div {
+  display: flex;
+  justify-content: center; /* Center the dropdown */
+  align-items: center; /* Align content vertically */
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 10px 20px; /* Add padding for space */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 300px; /* Restrict maximum width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Dropdown Styling */
+.filter-div select {
+  width: 100%; /* Full width */
+  padding: 8px 12px; /* Inner padding */
+  font-size: 16px; /* Font size for readability */
+  color: #333; /* Dark text color */
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transition */
+}
+
+/* Hover Effect */
+.filter-div select:hover {
+  border-color: #888; /* Darker border on hover */
+}
+
+/* Focus Effect */
+.filter-div select:focus {
+  border-color: #02457A; /* Blue border on focus */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(2, 69, 122, 0.5); /* Blue glow on focus */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .filter-div {
+    padding: 10px; /* Adjust padding for smaller screens */
+    max-width: 100%; /* Allow full width */
+  }
+
+  .filter-div select {
+    font-size: 14px; /* Slightly smaller font */
+  }
+}
   
   .additional-content {
     flex: 1;

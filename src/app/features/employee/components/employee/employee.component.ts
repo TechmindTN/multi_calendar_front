@@ -7,7 +7,7 @@ import { AddEmployeeDialogComponent } from '../add-employee-dialog/add-employee-
 import { provideStore } from '@ngrx/store';
 import { EmployeeSharedDataService } from '../../../../shared/employee-shared';
 import {Employee} from '../../models/Employee';
-import {User} from '../../../user/models/user';
+import {User} from '../../../user/models/User';
 
 import { EditService } from '../../services/edit.service';
 // import { provideEffects } from '@ngrx/effects';

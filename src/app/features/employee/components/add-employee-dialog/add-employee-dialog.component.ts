@@ -11,7 +11,7 @@ import {  EventEmitter, Output } from '@angular/core';
   templateUrl: './add-employee-dialog.component.html',
   styleUrl: './add-employee-dialog.component.scss'
 })
-export class AddEmployeeDialogComponent {
+export class AddEmployeeDialogComponent { 
   employeeData = {
     first_name: '',
     id_departement: '',

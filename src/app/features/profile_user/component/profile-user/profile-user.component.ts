@@ -1,21 +1,20 @@
-import { Component,OnInit  } from '@angular/core';
-import {Router } from '@angular/router';
+import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileService } from '../../services/profile.service';
-import { ProfileSharedDataService } from '../../../../shared/profile_shared';
+import { ProfileuserService } from '../../services/profileuser.service';
+import { ProfileuserSharedDataService } from '../../../../shared/profile_user_shared';
+
+
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profile-user',
   standalone: true,
   imports: [CommonModule,HttpClientModule],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  templateUrl: './profile-user.component.html',
+  styleUrl: './profile-user.component.scss'
 })
-export class ProfileComponent implements OnInit {
-  employee: any;
-  company: any;
-  sidebarOpen = false; // Initial state of the sidebar
-
+export class ProfileUserComponent implements OnInit {
+  user : any ;
+  sidebarOpen = false;
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen; // Toggle the sidebar state
   }
@@ -26,22 +25,22 @@ export class ProfileComponent implements OnInit {
   }
   profileData: any;
 
-  constructor(private profileService: ProfileService,private sharedDataService: ProfileSharedDataService,) {}
+  constructor(private profileuserService : ProfileuserService ,private sharedDataService: ProfileuserSharedDataService,) {}
 
   ngOnInit(): void {
     this.loadLocalProfileData();
   }
-
   loadLocalProfileData(): void {
     
     this.sharedDataService.employee$.subscribe(data => {
-      this.company = data;
+      this.user = data;
       console.log(data)
       // console.log(data); // React to data changes here
     });
   }
+  
   loadProfileData(): void {
-    this.profileService.getProfile().subscribe(
+    this.profileuserService.getProfile().subscribe(
       (data) => {
         
         this.profileData = data;
@@ -51,5 +50,4 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
 }

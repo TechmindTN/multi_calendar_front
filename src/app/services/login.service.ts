@@ -7,7 +7,7 @@ import { ProfileSharedDataService } from '../shared/profile_shared';
   providedIn: 'root'
 })
 export class LoginService {
-  apiUrl: string = "http://localhost:8080/auth"
+  apiUrl: string = "192.168.1.73:3002/auth"
 
   constructor(private httpClient: HttpClient,private sharedDataService: ProfileSharedDataService,) { }
 

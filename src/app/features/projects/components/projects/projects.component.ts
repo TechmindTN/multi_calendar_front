@@ -26,24 +26,26 @@ interface project{
 })
 export class ProjectsComponent {
 project: project[] = [
-  // {
-  //   logo:'',
-  //   name:'glovo',
-  //   stratingDate:'2024-02-01',
-  //   deadline:'2024-03-31',
-  //   duration:31,
-  //   status:'active'
+  {
+    id:1,
+    logo:'',
+    name:'glovo',
+    stratingDate:'2024-02-01',
+    deadline:'2024-03-31',
+    duration:31,
+    status:'active'
 
-  // },
-  // {
-  //   logo:'',
-  //   name:'bolt',
-  //   stratingDate:'2024-04-01',
-  //   deadline:'2024-05-31',
-  //   duration:31,
-  //   status:'inactive'
+  },
+  {
+    id:2,
+    logo:'',
+    name:'bolt',
+    stratingDate:'2024-04-01',
+    deadline:'2024-05-31',
+    duration:31,
+    status:'inactive'
 
-  // },
+  },
 ];
 
 
@@ -97,6 +99,8 @@ editProject(project: any): void {
   dialogRef.afterClosed().subscribe((result) => {
     if (result) {
       console.log('Edited project:', result);
+      // Update the project in the list or send an update request to the backend
+      
     }
   });
 }

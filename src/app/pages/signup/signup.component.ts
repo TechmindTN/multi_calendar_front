@@ -48,7 +48,7 @@ export class SignUpComponent {
   }
 
   submit(){
-    this.http.post('https://2379-2c0f-f698-4095-2d56-dda6-fb51-d15a-db75.ngrok-free.app/auth/registre', {"email":this.username,
+    this.http.post('192.168.1.73:3002/auth/registre', {"email":this.username,
 "username":this.username, "password":this.password})
       .subscribe((resp:any)=>{console.log('register succesfully',resp);})
    /* this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({

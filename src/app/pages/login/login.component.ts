@@ -49,7 +49,7 @@ export class LoginComponent {
 
   submit(){
     console.log('login start');
-    this.http.post('https://2021-2c0f-f698-4111-e4a3-6df1-6420-dbb7-d639.ngrok-free.app/auth/login', {"username":this.username,
+    this.http.post('http://192.168.1.73:3002/auth/login', {"username":this.username,
       "password":this.password})
       .subscribe((resp:any)=>{console.log('login succesfully',resp);
         if(resp.user.role_id==3){

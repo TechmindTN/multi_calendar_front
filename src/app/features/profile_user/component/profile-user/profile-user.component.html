@@ -1,0 +1,130 @@
+<!-- Sidebar Container -->
+<div class="sidebar" [class.open]="sidebarOpen">
+    <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Tasks</a>
+    <a href="#">Projects</a>
+    <a href="#">Profile</a>
+  </div>
+  
+  <!-- Toggle Button -->
+  <button class="openbtn" (click)="toggleSidebar()">☰ </button>
+  
+  <!-- Main Content -->
+  
+  
+      <div class="dashboardwhite"><nav>
+          <p class="titre">Dashboard</p>
+          <div class="iconmenu">
+              
+          <a mat-button routerLink="/profil"> profil</a>
+          <a mat-button routerLink="/comment">comment</a>
+          <a mat-button routerLink="/notification">Contact</a>
+      </div>
+        </nav>
+
+
+
+
+       <!-- Main Content Container -->
+<div class="dashboard-content">
+    <!-- Left Section (25%) -->
+    <div class="left-section">
+      <div class="profile-container">
+        <img src="path-to-image.jpg" alt="Company Logo" class="profile-photo" />
+        <h2 class="company-name">TechMindSolution</h2>
+        <ul class="info-links">
+          <li (click)="openSection('info')">Company Information</li>
+          <li (click)="openSection('password')">Change Password</li>
+          <li (click)="openSection('logout')">Log Out</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Right Section (75%) -->
+    <div class="right-section">
+      <div *ngIf="activeSection === 'info'">
+        <h3 class="CompanyInformation"> Information</h3>
+        <form>
+            <!-- Name and Field (50/50 Split) -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" value="{{user.name}}"/>
+              </div>
+              <div class="form-group">
+                <label for="field">Field</label>
+                <input type="text" id="field" class="form-control" value="{{user.field}}"/>
+              </div>
+            </div>
+        
+            <!-- Email (Full Width) -->
+            <div class="form-full-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" value="{{user.email}}"/>
+              </div>
+            </div>
+        
+            <!-- Address (Full Width) -->
+            <div class="form-full-row">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" class="form-control"value="{{user.address}}" />
+              </div>
+            </div>
+        
+            <!-- Phone Number and DateTime Created (50/50 Split) -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" value="{{user.phonenumber}}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="date-created">DateTime Created</label>
+                <input type="text" id="date-created" class="form-control" value="{{user.created}}"/>
+              </div>
+            </div>
+        
+            <!-- Buttons (Full Width) -->
+            <div class="button-row">
+              <button type="button" class="form-button discord-button">Discord</button>
+              <button type="submit" class="form-button save-button">Save</button>
+            </div>
+          </form>
+        
+      </div>
+      <div *ngIf="activeSection === 'password'">
+        <h3 class="CompanyInformation">Change Password</h3>
+        <form>
+          <!-- Password form fields here -->
+          <div class="form-full-row">
+            <div class="form-group">
+              <label for="email">current password </label>
+              <input type="email" id="email" class="form-control" />
+            </div>
+          </div>
+          <div class="form-full-row">
+            <div class="form-group">
+              <label for="email">new password </label>
+              <input type="email" id="email" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">confirm password </label>
+            <input type="email" id="email" class="form-control" />
+          </div>
+        <!-- Buttons (Full Width) -->
+        <div class="button-row">
+            <button type="button" class="form-button discord-button">Discord</button>
+            <button type="submit" class="form-button save-button">Save</button>
+        </div>
+        </form>
+      </div>
+      <div *ngIf="activeSection === 'logout'">
+        <h3>Log Out</h3>
+        <p>Logging out...</p>
+      </div>
+    </div>
+  </div>
