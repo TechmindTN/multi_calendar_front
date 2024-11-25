@@ -1,0 +1,59 @@
+stages:
+  - build
+  - push
+  - test
+  - run
+
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  PORT: 81
+
+test-job:
+  stage: build
+  script:
+    - echo "Building Docker image..."
+    - echo "$CI_COMMIT_SHA"
+    - docker build -t $IMAGE_TAG .
+  tags:
+    - runner01
+push-job:
+  stage: push
+  script:
+    - echo "Pushing Docker image to GitLab registry..."
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push $IMAGE_TAG
+  tags:
+    - runner01
+trivy-scan:
+  stage: test
+  script:
+    - trivy image --format table --output trivy-report.txt $IMAGE_TAG
+  artifacts:
+    paths:
+      - trivy-report.txt
+    expire_in: 1 week 
+
+  tags:
+    - runner01
+  allow_failure: true
+
+run-job:
+  stage: run
+  script:
+    - echo "running the docker container..."
+    - |
+      CONTAINERS=$(docker ps --filter "publish=$PORT" -q)
+      if [ -n "$CONTAINERS" ]; then
+        echo "Stopping and removing containers using port $PORT..."
+        docker stop $CONTAINERS
+        docker rm $CONTAINERS
+      else
+        echo "No containers are using port $PORT."
+      fi
+    - docker run -d -p 81:80 $IMAGE_TAG
+    # - docker compose up -d
+    # -
+
+  tags:
+    - runner01
