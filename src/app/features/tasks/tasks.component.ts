@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tasks.component.scss'
 })
 export class TasksComponent {
+  
   sidebarOpen = false; // Initial state of the sidebar
 
   toggleSidebar() {
@@ -16,9 +18,9 @@ export class TasksComponent {
   }
   // Array to hold the card objects
   cards = [
-    { title: 'Card 1', content: 'Content for card 1.' },
-    { title: 'Card 2', content: 'Content for card 2.' },
-    { title: 'Card 3', content: 'Content for card 3.' }
+    { title: 'Task 1', content: 'Content for Task 1.' },
+    { title: 'Task 2', content: 'Content for Task 2.' },
+    { title: 'Task 3', content: 'Content for Task 3.' }
   ];
 
   // Function to add a new card
@@ -28,5 +30,28 @@ export class TasksComponent {
       content: `Content for card ${this.cards.length + 1}.`
     };
     this.cards.push(newCard); // Adds the new card to the array
+  }
+  constructor ( private router: Router){}
+  goToProfile(): void {
+    console.log('Navigating to Profile');
+    this.router.navigate(['/profile']);
+  }
+  goToDashboard(): void {
+    console.log('Navigating to dashboard');
+    this.router.navigate(['/dashboard']).then(() => {
+      
+    });
+  }
+  goToProjects(): void {
+    console.log('Navigating to Projects');
+    this.router.navigate(['/projects']);
+  }
+  goToTasks(): void {
+    console.log('Navigating to tasks');
+    this.router.navigate(['/tasks']);
+  }
+  goToContact(): void {
+    console.log('Navigating to help');
+    this.router.navigate(['/tickethelp']);
   }
 }

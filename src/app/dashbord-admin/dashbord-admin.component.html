@@ -22,10 +22,10 @@
       <nav>
         <div class="sidebar" [class.open]="sidebarOpen">
           <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
-          <a href="#">Dashboard</a>
-          <a href="#">Tasks</a>
-          <a href="#">Projects</a>
-          <a href="#">Profile</a>
+          <a (click)="goToDashboard()">Dashboard</a>
+          <a (click)="goToTasks()">Tasks</a>
+          <a (click)="goToProjects()">Projects</a>
+          <a (click)="goToProfile()">Profile</a>
         </div>
         
         <!-- Toggle Button -->
@@ -33,9 +33,10 @@
         <p class="titre">Dashboard</p>
         <div class="iconmenu">
             
-        <a mat-button routerLink="/profil"> profil</a>
+        <a mat-button (click)="goToProfile()"> profil</a>
+        <!-- <button (click)="goToProfile()">Go to Profile</button> -->
         <a mat-button routerLink="/comment">comment</a>
-        <a mat-button routerLink="/notification">Contact</a>
+        <a mat-button (click)="goToContact()">Contact</a>
     </div>
       </nav>
       <div class="first_container">

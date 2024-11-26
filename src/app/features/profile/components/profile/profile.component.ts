@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
   }
   profileData: any;
 
-  constructor(private profileService: ProfileService,private sharedDataService: ProfileSharedDataService,) {}
+  constructor(private profileService: ProfileService,private sharedDataService: ProfileSharedDataService,private router: Router) {}
 
   ngOnInit(): void {
     this.loadLocalProfileData();
@@ -50,6 +50,28 @@ export class ProfileComponent implements OnInit {
         console.error('Error fetching profile data:', error);
       }
     );
+  }
+  goToProfile(): void {
+    console.log('Navigating to Profile');
+    this.router.navigate(['/profile']);
+  }
+  goToDashboard(): void {
+    console.log('Navigating to dashboard');
+    this.router.navigate(['/dashboard']).then(() => {
+      
+    });
+  }
+  goToProjects(): void {
+    console.log('Navigating to Projects');
+    this.router.navigate(['/projects']);
+  }
+  goToTasks(): void {
+    console.log('Navigating to tasks');
+    this.router.navigate(['/tasks']);
+  }
+  goToContact(): void {
+    console.log('Navigating to help');
+    this.router.navigate(['/tickethelp']);
   }
 
 }

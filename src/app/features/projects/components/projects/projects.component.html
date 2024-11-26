@@ -1,10 +1,10 @@
 <!-- Sidebar Container -->
 <div class="sidebar" [class.open]="sidebarOpen">
     <a href="#" class="closebtn" (click)="toggleSidebar()">&times;</a>
-    <a href="#">Dashboard</a>
-    <a href="#">Tasks</a>
-    <a href="#">Projects</a>
-    <a href="#">Profile</a>
+    <a (click)="goToDashboard()">Dashboard</a>
+    <a (click)="goToTasks()">Tasks</a>
+    <a (click)="goToProjects()">Projects</a>
+    <a (click)="goToProfile()">Profile</a>
   </div>
   
   <!-- Toggle Button -->

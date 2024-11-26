@@ -2,6 +2,7 @@ import { Component ,OnInit  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditEmployeeDialogComponent } from '../edit-employee-dialog/edit-employee-dialog.component';
+import { DeleteEmployeeService} from '../../services/delete/delete-employee.service';
 import { DeleteDialogComponent } from '../../../../delete-dialog/delete-dialog.component';
 import { AddEmployeeDialogComponent } from '../add-employee-dialog/add-employee-dialog.component';
 import { provideStore } from '@ngrx/store';
@@ -9,7 +10,9 @@ import { EmployeeSharedDataService } from '../../../../shared/employee-shared';
 import {Employee} from '../../models/Employee';
 import {User} from '../../../user/models/User';
 
-import { EditService } from '../../services/edit.service';
+
+import { EditService } from '../../services/edit/edit.service';
+import { DeleteEmployeeDialogComponent } from '../delete-employee-dialog/delete-employee-dialog.component';
 // import { provideEffects } from '@ngrx/effects';
 // import { employeeReducer } from './state/reducers/employee.reducer';
 // import { EmployeeEffects } from './state/effects/employee.effects';
@@ -59,7 +62,7 @@ export class EmployeeComponent implements OnInit {
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
   }
-  constructor(private dialog: MatDialog,private sharedDataService: EmployeeSharedDataService, private editservice :EditService) {}
+  constructor(private dialog: MatDialog,private sharedDataService: EmployeeSharedDataService, private editservice :EditService , private deleteemployeegservice :DeleteEmployeeService ) {}
 
 
 
@@ -170,6 +173,21 @@ onAdd() {
       console.log('Dialog closed without any data.');
     }
   });
+}
+
+deleteEmployeebackend(id: number): void {
+  if (confirm('Are you sure you want to delete this employee?')) {
+    this.deleteemployeegservice.deleteEmployeebackend(id).subscribe({
+      next: () => {
+        this.employees = this.employees.filter((emp) => emp.id !== id);
+        alert('Employee deleted successfully.');
+      },
+      error: (err) => {
+        console.error('Error deleting employee:', err);
+        alert('Failed to delete the employee.');
+      },
+    });
+  }
 }
 
 }

@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
-interface Card {
+interface card {
   title: string;
   description: string;
   
@@ -32,9 +32,13 @@ export class NotesComponent {
 
   // Array to hold the card objects
   cards = [
-    { title: 'Card 1', description: 'Content for card 1.' },
-    { title: 'Card 2', description: 'Content for card 2.' },
-    { title: 'Card 3', description: 'Content for card 3.' }
+    { title: 'Note 1', description: 'Content for Note 1.' },
+    { title: 'Note 2', description: 'Content for Note 2.' },
+    { title: 'Note 3', description: 'Content for Note 3.' },
+    { title: 'Note 4', description: 'Content for Note 1.' },
+    { title: 'Note 5', description: 'Content for Note 2.' },
+    { title: 'Note 6', description: 'Content for Note 3.' },
+    
   ];
 
 

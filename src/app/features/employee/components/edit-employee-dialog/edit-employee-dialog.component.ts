@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { FormControl,FormsModule, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
-import { EditService } from '../../services/edit.service'; 
+import { EditService } from '../../services/edit/edit.service'; 
 import { EmployeeComponent } from '../employee/employee.component';
 import { EmployeeSharedDataService } from '../../../../shared/employee-shared';
 

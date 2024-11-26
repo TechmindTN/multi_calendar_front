@@ -36,7 +36,7 @@ export const routes: Routes = [
         { path: 'projects', component: ProjectsComponent },
         { path: 'notes', component: NotesComponent },
         { path: 'profile', component: ProfileComponent },
-        { path: '', redirectTo: '/tasks', pathMatch: 'full' }, // default route
+        { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // default route
         {path: 'employee', component:EmployeeComponent},
         {path: 'tickethelp', component:TickethelpComponent},
         {path: 'profile_user', component:ProfileUserComponent},
